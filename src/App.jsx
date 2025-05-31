@@ -2,7 +2,8 @@ import { useState } from 'react';
 import { BrowserRouter as Router, Routes, Route, Navigate } from 'react-router-dom';
 import HomePage from './pages/HomePage';
 import Order from './pages/Order';
-import LoginPage from './pages/Login.jsx'; 
+import RegistrationPage from './pages/Registration.jsx'; 
+import LoginPage from './pages/LoginPage.jsx'; // ✅ Import LoginPage
 import './App.css';
 
 export default function App() {
@@ -21,7 +22,8 @@ export default function App() {
   return (
     <Router>
       <Routes>
-        <Route path="/login" element={<LoginPage setUserDetails={setUserDetails} />} />
+        <Route path="/register" element={<RegistrationPage setUserDetails={setUserDetails} />} />
+        <Route path="/login" element={<LoginPage />} /> {/* ✅ Login route added */}
         <Route path="/" element={<HomePage cart={cart} updateCart={updateCart} />} />
         <Route
           path="/order"
@@ -29,7 +31,7 @@ export default function App() {
             userDetails ? (
               <Order cart={cart} updateCart={updateCart} userDetails={userDetails} />
             ) : (
-              <Navigate to="/login" replace />
+              <Navigate to="/register" replace />
             )
           }
         />
