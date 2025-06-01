@@ -51,8 +51,8 @@ estaurant-customer-app/
 
 1. **Clone the repository**:
    ```bash
-   git clone https://github.com/vamshikrishnaav/frontend-web-app
-   cd frontend-web-app
+   git clone https://github.com/vamshikrishnaav/frontend-mobile-app
+   cd frontend-mobile-app
 
 ## Dependencies
 npm install
